@@ -1,3 +1,19 @@
+<?php
+session_start();
+    if($_SESSION["login"]=="No"){
+      echo "<a href='login.php'>登入</a>";
+      header("Location /login.php");
+    }
+    elseif($_SESSION["login"]=="Yes"){
+      echo "<a href='logout.php'>登出系統</a>";
+      header("Location /logout.php");
+    }
+    else{
+      echo "非法進入系統";
+      exit();
+    }
+?>
+
 <html>
 
 <head>
